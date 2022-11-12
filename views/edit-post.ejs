@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <h1>Adit post</h1>
+         <form id="post-form" method="post" action="/edit/<%= post.id %>?_method=PUT"">
+           <div class="form-info">
+              <label>Post Title
+               <input type="text" name="title" required="required" value="<%= post.title %>"/>
+              </label> 
+              <label>Author
+               <input type="text" name="author" required="required"  value="<%= post.author %>" />
+              </label>
+           </div>
+           <div class="form-text">
+             <textarea name="text" required="required"><%= post.text %></textarea>
+           </div>
+           <div class="form-button">
+             <input type="submit" value="Submit" />
+           </div>
+         </form>
+</body>
+</html>
+
